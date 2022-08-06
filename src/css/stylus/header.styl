@@ -1,0 +1,105 @@
+@import './mixIns'
+
+.header 
+  width 100%
+  height: 48px
+  background-color #F8F9F9
+  box-shadow: 0 2px 2px #ddd
+
+.header__container
+  flex(row, flex-start, center)
+  max-width: 1264px
+  margin 0 auto
+  height 100%
+
+.header__hr
+  width 100%
+  height 3px
+  background-color #F48225
+  margin 0
+
+.header__logo
+  flex(row, center, center)
+  button()
+  height 100%
+  min-width 166px
+  font-size 1.5em
+  &:hover
+    background-color #E3E6E8
+  span
+    margin-left 2px
+    font-weight: 900
+
+.header__main
+  flex(row, flex-start, center)
+  width 100%
+
+.header__tab
+  button()
+  padding 0.5em 0.75em
+  border-radius: 50px
+  margin-right: 0.25em
+  color #888
+  white-space nowrap  
+  &:hover
+    background-color #E3E6E8
+  @media (max-width:980px) {
+    display none
+  }
+  &.header__tab--keep
+    @media (max-width:980px) {
+      display block
+    }
+
+
+.header__searchIcon
+  font-size 24px
+  min-width @font-size
+  margin-left 8px
+  margin-right: -32px
+  z-index 10
+
+.header__searchBar
+  width 100%
+  height 32px
+  padding 0 3em
+  margin-right 1em
+  border 1px solid #ccc
+  border-radius: 4px
+  &:focus-visible
+    border 1px solid #7AA7C7
+    outline: none
+    box-shadow: 0 0 0 4px #9Ac7e750
+  &::after
+    content ''
+    position absolute
+    top 0
+    width 30px
+    height 30px
+    background-color red
+  
+
+.header__user
+  flex()
+  button
+    button()
+    padding: 8px .8em
+    border-radius: 4px
+    white-space: nowrap 
+    border 1px solid #7AA7C7
+    box-shadow inset 0 1px 0 rgba(255,255,255,0.7)
+
+  button+button
+    margin-left: 4px
+
+
+.button--login
+  background-color #E1ECF4
+  color #39739D
+  &:hover
+    background-color #B3D3EA
+.button--signup
+  color #fff
+  background-color #0A95FF
+  &:hover
+    background-color #0074CC
