@@ -1,8 +1,10 @@
 import React from 'react'
 import Search from '../icons/Search'
+import { useNavigate } from 'react-router-dom'
 
 
-const Header = () => {
+const Header = ({ showCart }) => {
+  const navigate = useNavigate()
   return (
     <>
       <div className="header__hr" />
@@ -10,9 +12,17 @@ const Header = () => {
         <div className="header__container">
           <div className="header__logo">stack<span>overflow</span></div>
           <div className="header__main">
-            <div className="header__tab">About</div>
-            <div className="header__tab header__tab--keep">Products</div>
-            <div className="header__tab">For Teams</div>
+            <div className="header__tab"
+              onClick={() => { navigate('/page1') }}
+            >About</div>
+            <div className="header__tab header__tab--keep"
+              onClick={() => { navigate('/') }}
+            >
+              Products
+            </div>
+            <div className="header__tab"
+              onClick={showCart}
+            >Show Cart</div>
             <Search className="header__searchIcon" color="#888" />
             <input className="header__searchBar"
               placeholder='Search...'
